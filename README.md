@@ -12,13 +12,13 @@ To provide insight about general sales and profit of the business based on locat
 
 ### Recommended Analysis
 
-1. Which product categories drive the biggest profits? Is this the same across store locations?
+*1. Which product categories drive the biggest profits? Is this the same across store locations?*
 
-2. Can you find any seasonal trends or patterns in the sales data?
+*2. Can you find any seasonal trends or patterns in the sales data?*
 
-3. How much money is tied up in inventory at the toy stores? How long will it last?
+*3. How much money is tied up in inventory at the toy stores? How long will it last?*
 
-### TOOLS USED: MICROSOFT SQL AND POWER BI
+#### TOOLS USED: MICROSOFT SQL AND POWER BI
 
 ### Data importation and cleaning
 
@@ -27,13 +27,15 @@ To provide insight about general sales and profit of the business based on locat
 - utilized the UPDATE, SET, REPLACE and TRIM commands to clean the Product price and product cost columns.
 - made use of the ALTER and SET commands to change the data type of Product price and product cost columns.
 
+
+
 ## DATA EXPLORATION AND ANALYSIS
   ![Screenshot (121)](https://github.com/TcAnalyst/Toy-store-sales-with-powerbi-sql/assets/142181097/57c53c30-31db-43bb-84d7-07f33ddb3f95)
--sales report dashboard-
+###### *-sales report dashboard-*
 
 ### *Analysis by products;*
 
-1. Which product categories drive the biggest profits?
+#### 1. Which product categories drive the biggest profits?
 ```sql
 with GeneralProfit as
 (select  Product_Category, Product_Price-Product_Cost Categoryprofits, sales.units, 
@@ -48,7 +50,7 @@ order by Profits desc;
 ```
 In general, the toy product category records the highest profit with $1.08m which accounts for 26.89%, electronics category accounts for the second biggest profit, $1m(25%), while the sports & outdoor category records the lowest profit of $500k.
 
-2. is this the same across store locations?
+#### 2. is this the same across store locations?
 
 Across store locations they are not the same as the Electronics category accounts for the biggest profit in airport and commercial areas, while the Toy category accounts for the biggest profits in the downtown and residential areas.
 
@@ -84,7 +86,7 @@ FROM
 WHERE
     RN = 1;
 ```
-3. What are the top 5 products that drive the biggest profits?
+#### 3. What are the top 5 products that drive the biggest profits?
 ```sql
 WITH GeneralProfit AS (
     SELECT
@@ -108,7 +110,7 @@ ORDER BY
 ```
 the colourbuds, Action figure, lego bricks, deck of cards and glass marbles are the top 5 products with the highest profits of 835k, 348k, 298k, 252k and 190k respectively.
 
-4. What are the top 5 most sold products?
+#### 4. What are the top 5 most sold products?
 ```sql
 select TOP 5  Product_Name, Product_Category, sum(sales.units) TotalSaleCount
 from products
@@ -121,7 +123,7 @@ in terms of units of total products sold, the colourbuds are the highest sold pr
 
 ### *Analysis by store and location;*
 
-1. Which store location drive the biggest profits?
+#### 1. Which store location drive the biggest profits?
 ```sql
 with GeneralProfit as
 (select   stores.Store_ID,stores.Store_Name, stores.Store_Location, products.Product_Category, sales.Units,
@@ -137,7 +139,7 @@ order by Profits desc;
 ```
 stores located at downtown areas recorded the highest profits with over $2m in profits while stores in airport areas drive the lowest profit, $378k.
 
-3. Which stores drive the biggest profits ?
+#### 2. Which stores drive the biggest profits ?
 ```sql
 with GeneralProfit as(
  select   stores.Store_Name, stores.Store_City, stores.Store_Location, products.Product_Category, sales.Units,
@@ -163,7 +165,7 @@ Sales increase as the year progressed in 2017 but wasnt the case in 2018. march 
 
 ### *Analysis on the inventory;*
 
-1. How much money is tied up in inventory at the toy stores?
+#### How much money is tied up in inventory at the toy stores?
 ```sql
 with MT as (select  Stock_On_Hand , products.Product_Cost , Stock_On_Hand * products.Product_Cost MoneyTiedUp
 from inventory
