@@ -31,7 +31,7 @@ To provide insight about general sales and profit of the business based on locat
   ![Screenshot (121)](https://github.com/TcAnalyst/Toy-store-sales-with-powerbi-sql/assets/142181097/57c53c30-31db-43bb-84d7-07f33ddb3f95)
 -sales report dashboard-
 
-### Analysis by products;
+### *Analysis by products;*
 
 1. Which product categories drive the biggest profits?
 ```sql
@@ -119,7 +119,7 @@ order by TotalSaleCount desc;
 ```
 in terms of units of total products sold, the colourbuds are the highest sold products accounting for 104k (23.5%) units sold, playdoh can although not in the top 5 highest profit products recorded 103k (23.2%) units sold. The barrel o’slime, deck of cards and magic sand make up the third, fourth and fifth most sold products with 91k, 84k and 61k units sold.
 
-### Analysis by store and location;
+### *Analysis by store and location;*
 
 1. Which store location drive the biggest profits?
 ```sql
@@ -153,15 +153,15 @@ with GeneralProfit as(
 ```
 with over 50 stores under the maven toy company, the cludad de mwxico 2, the guadalajara 3, the cludad de mexico 1, monterrey 2 and toluca stores recorded the highest profits of $170k, $121k, $111k, $107k and $105k respectively. the cuernavaca 1 and the la paz 1 stores recorded the lowest profit and second lowest profit, both driving $57k profits each.
 
-### **Analysis by seasonal trend and pattern;**
+### *Analysis by seasonal trend and pattern;*
 Sales and profit peak between March and July. Sales made are between 109K and 112k during this period with the highest sales recorded in April (112k units of products sold). Profits made was between $387k and $406k in that same period with the highest profit recorded in March ($406k profits made). Lowest sale was recorded in October with 48k units sale while the lowest profit was also recorded in the same month with $179k.
 
 Quarterly, sales peaked at the second quarter and lowest in the fourth quarter.
 
-### Analysis by year;
+### *Analysis by year;*
 Sales increase as the year progressed in 2017 but wasnt the case in 2018. march recorded one of the least sales in 2017 (39k unit sales) but was the highest selling month in 2018 (69k unit sales). In general sales were high towards the end of the year in 2017, but highly concentrated in between the year in 2018 (february to July).
 
-### Analysis on the inventory;
+### *Analysis on the inventory;*
 
 1. How much money is tied up in inventory at the toy stores?
 ```sql
@@ -173,7 +173,8 @@ select sum(MoneyTiedup)
 from MT;
 ```
 the highlighted query in the frame above returns the amount stored up in the inventory which is a little above $300k
--- How long will it last?
+
+*How long will it last?*
 ```sql
 with TotalUnitSales as (select Date_, sum(units) units
 from sales
@@ -182,7 +183,7 @@ select avg(units) AverageSalePerDay
 from TotalUnitSales;
 ```
 
--- total stock on hand
+*total stock on hand*
 ```sql
 select sum(stock_on_hand)
 from inventory;
@@ -203,4 +204,4 @@ Since 1709 units sales are made every day and there are 29742 units in the inven
 investment of more capital across all stores in downtown areas will attract massive profits for the business.
 factors affecting sales during the January and February should be looked into.
 
-thank you for your time!
+*thank you for your time!*
