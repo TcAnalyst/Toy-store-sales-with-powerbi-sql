@@ -153,7 +153,7 @@ with GeneralProfit as(
 ```
 with over 50 stores under the maven toy company, the cludad de mwxico 2, the guadalajara 3, the cludad de mexico 1, monterrey 2 and toluca stores recorded the highest profits of $170k, $121k, $111k, $107k and $105k respectively. the cuernavaca 1 and the la paz 1 stores recorded the lowest profit and second lowest profit, both driving $57k profits each.
 
-### Analysis by seasonal trend and pattern;
+### **Analysis by seasonal trend and pattern;**
 Sales and profit peak between March and July. Sales made are between 109K and 112k during this period with the highest sales recorded in April (112k units of products sold). Profits made was between $387k and $406k in that same period with the highest profit recorded in March ($406k profits made). Lowest sale was recorded in October with 48k units sale while the lowest profit was also recorded in the same month with $179k.
 
 Quarterly, sales peaked at the second quarter and lowest in the fourth quarter.
@@ -181,7 +181,7 @@ group by Date_)
 select avg(units) AverageSalePerDay
 from TotalUnitSales;
 ```
---average sales made per day --
+
 -- total stock on hand
 ```sql
 select sum(stock_on_hand)
@@ -202,6 +202,5 @@ Since 1709 units sales are made every day and there are 29742 units in the inven
 
 investment of more capital across all stores in downtown areas will attract massive profits for the business.
 factors affecting sales during the January and February should be looked into.
-click here for the full SQL code to my project.
 
 thank you for your time!
